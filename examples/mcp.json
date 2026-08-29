@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "labelprint": {
+      "command": "labelprint-mcp",
+      "env": {
+        "LABELPRINT_TRANSPORT": "auto",
+        "LABELPRINT_ADDRESS": "AA:BB:CC:DD:EE:FF",
+        "LABELPRINT_WIDTH_MM": "50",
+        "LABELPRINT_HEIGHT_MM": "30"
+      }
+    }
+  }
+}

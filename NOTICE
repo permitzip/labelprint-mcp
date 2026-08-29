@@ -1,0 +1,21 @@
+labelprint
+==========
+
+Copyright (c) 2026 PermitZIP
+Licensed under the MIT License. See LICENSE.
+
+Third-party notices
+-------------------
+
+Packet framing (`labelprint.packet.FramedPacket`) is derived from the
+`NiimbotPacket` implementation in niimprint:
+
+    https://github.com/AndBondStyle/niimprint
+    Copyright (c) 2023 kjy00302
+    MIT License
+
+The protocol-3 print task (handshake, 7-byte print start, 6-byte page
+size, paced bitmap rows, print-status poll) was completed from local
+device traces and community protocol notes. This project does not
+bundle manufacturer assets, fonts, or cloud clients, and it does not
+call manufacturer HTTP APIs.

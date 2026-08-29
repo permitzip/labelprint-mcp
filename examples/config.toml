@@ -1,0 +1,22 @@
+# Copy to ~/.config/labelprint/config.toml (or ./labelprint.toml).
+# Media size is local. This file never contacts a vendor cloud.
+
+[printer]
+# auto | rfcomm (macOS Bluetooth) | bluetooth (Linux AF_BLUETOOTH) | serial
+transport = "auto"
+address = "AA:BB:CC:DD:EE:FF"
+# serial_port = "/dev/cu.usbserial-0001"
+density = 4
+max_width_px = 384
+adapter = "protocol3"
+
+[media]
+width_mm = 50
+height_mm = 30
+dpi = 203
+
+# Optional: map a chip barcode the printer already reports to a size.
+# [[media.barcode]]
+# code = "10262260"
+# width_mm = 50
+# height_mm = 30
