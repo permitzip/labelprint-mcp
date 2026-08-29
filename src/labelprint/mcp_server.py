@@ -11,6 +11,7 @@ from PIL import Image
 
 from labelprint.config import load_settings
 from labelprint.errors import LabelprintError
+from labelprint.paths import default_job_path, default_preview_path
 from labelprint.printer import print_paths, query_status, render_to_path
 from labelprint.session import doctor
 from labelprint.transport.serial import list_serial_ports
@@ -89,7 +90,7 @@ def labelprint_render(
     """Render a preview PNG (title, body, and/or QR). Does not print."""
     if not title and not body and not qr:
         return _err(ValueError("render needs title, body, and/or qr"))
-    dest = Path(out_path) if out_path else Path.cwd() / "labelprint-preview.png"
+    dest = Path(out_path) if out_path else default_preview_path()
     try:
         settings = _settings_from_tool(width_mm=width_mm, height_mm=height_mm)
         path = render_to_path(settings, dest, title=title, body=body, qr=qr)
@@ -134,7 +135,7 @@ def labelprint_print(
     paths: list[Path] = []
     try:
         if title or body or qr:
-            rendered = Path.cwd() / "labelprint-job.png"
+            rendered = default_job_path()
             paths.append(render_to_path(settings, rendered, title=title, body=body, qr=qr))
         if image_path:
             path = Path(image_path)
