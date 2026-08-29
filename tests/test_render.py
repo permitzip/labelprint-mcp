@@ -56,7 +56,10 @@ def test_qr_plus_text_is_ink_centered() -> None:
         img = render_label(
             width_px=384,
             height_px=240,
-            title="0.96 Inch OLED I2C IIC Display Module 12864 128x64 Pixel SSD1306 Mini Self-Luminous OLED Screen Board",
+            title=(
+                "0.96 Inch OLED I2C IIC Display Module 12864 "
+                "128x64 Pixel SSD1306 Mini Self-Luminous OLED Screen Board"
+            ),
             body="MODULES / SENSORS / DISPLAYS",
             qr="http://localhost:3003/lab/i/fb2cfd55-b575-4b18-92e7-1daae4af5dd2",
         )
